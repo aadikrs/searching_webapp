@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Books</h1>
+<table>
+  <tr>
+    <% @book.each do |book| %>
+    <td>
+      <div class="card" style="width: 18rem;">
+        <%= image_tag book.cover %>
+        <%#= link_to image_tag book.cover %>
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text"><%= book.description %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= book.author %></li>
+          <li class="list-group-item"><%= book.isbn %></li>
+          <li class="list-group-item"><%= book.language%></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link"><%= link_to 'Edit', edit_book_path(book) %></a>
+          <a href="#" class="card-link"><%= button_to 'Destroy', book, method: :delete, :onclick => "return confirm('Are you sure you want to delete this entry?')"
+ %></a>
+        </div>
+      </div>
+    </td>
+      <br>
+    <% end %>
+  </tr>
+</table>
+
+
+<%= link_to 'New Book', new_book_path %>
+
+
+

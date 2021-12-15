@@ -1,0 +1,6 @@
+development:
+  mysql41: 3306
+test:
+  mysql41: 3306
+production:
+  mysql41: 3306
